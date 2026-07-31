@@ -256,6 +256,15 @@ textarea.form-control {
     box-shadow: none;
     border: 2px solid var(--gold);
 }
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
+    border-color: #dc3545;
+}
+
+.was-validated .form-control:valid,
+.was-validated .form-select:valid {
+    border-color: #198754;
+}
 .banner {
     margin: 15px 0 20px;
     background: #1a392963;
@@ -760,8 +769,8 @@ LIFESTYLE
         url("../images/lifestyle-bg.jpg") center center/cover no-repeat;
 }
 .lifestyle img {
-    border-radius: 22px;
-    box-shadow: var(--shadow);
+    border-radius: 22px !important;
+    box-shadow: var(--shadow) !important;
 }
 .lifestyle p {
     color: #d8d8d8;
@@ -770,10 +779,11 @@ LIFESTYLE
     font-size: 17px;
     color: #fff;
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 .lifestyle ul li i {
     font-size: 18px;
+    color: var(--gold);
 }
 /*==================================================
 PREMIUM IMAGE EFFECT
@@ -926,6 +936,7 @@ LOCATION
     margin-bottom: 18px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
     transition: 0.35s;
+    align-items: center;
 }
 .location-list .d-flex:hover {
     transform: translateX(8px);
@@ -1336,11 +1347,15 @@ RESPONSIVE
     section {
         padding: 80px 0;
     }
+    .py-5 {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
     .navbar {
         background: rgba(15, 17, 21, 0.97);
     }
     .hero {
-        padding: 120px 0 80px;
+        padding: 120px 0 30px;
         text-align: center;
     }
     .hero h1 {
@@ -1356,7 +1371,7 @@ RESPONSIVE
         gap: 15px;
     }
     .hero-form {
-        margin-top: 50px;
+        margin-top: 10px;
     }
     .section-title {
         font-size: 38px;
@@ -1397,11 +1412,69 @@ RESPONSIVE
     .contact-form {
         padding: 25px;
     }
-    .footer {
-        text-align: center;
-    }
     .social {
         margin: 5px;
+    }
+    .counter-box {
+        padding: 15px 0;
+    }
+    .villa-card {
+        height: auto;
+    }
+    .villa-content p {
+        margin-bottom: 0;
+    }
+    .amenity-box {
+        height: auto;
+    }
+    .lifestyle img {
+        margin-top: 20px;
+    }
+    #club-10 {
+        background-size: cover;
+        min-height: 450px;
+    }
+    #club-10 h2.section-title {
+        font-size: 29px;
+        margin: 30px 0;
+    }
+    #club-10 img {
+        margin-bottom: 0;
+        width: 180px;
+    }
+    #club-10:before {
+        background: linear-gradient(180deg, #0a4474 0%, #0a4474ad 60%, #090909 100%);
+        z-index: 0;
+    }
+    footer {
+        padding-top: 30px;
+    }
+    footer img.logo {
+        height: 60px;
+        margin: 0 auto 20px;
+    }
+    footer img.logo + p {
+        text-align: center;
+    }
+    footer img.rera {
+        margin: 0 auto 30px;
+        padding: 8px;
+        border: 1px solid #6f6f6f85;
+        border-radius: 10px;
+    }
+    .btn-back {
+        display: inline-block !important;
+        width: auto !important;
+    }
+    .success-title {
+        font-size: 27px !important;
+    }
+    .btn-back {
+        display: inline-block;
+        width: auto;
+    }
+    ul.navbar-nav li.nav-item {
+        width: 100%;
     }
 }
 @media(max-width:768px) {
