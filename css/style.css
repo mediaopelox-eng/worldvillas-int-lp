@@ -784,6 +784,7 @@ LIFESTYLE
 .lifestyle ul li i {
     font-size: 18px;
     color: var(--gold);
+    margin-right: 15px !important;
 }
 /*==================================================
 PREMIUM IMAGE EFFECT
@@ -1404,7 +1405,7 @@ RESPONSIVE
         font-size: 32px;
     }
     .counter-box h2 {
-        font-size: 44px;
+        font-size: 70px;
     }
     .gallery .swiper-slide img {
         height: 260px;

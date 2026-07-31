@@ -111,6 +111,7 @@
 
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="6e2dec1d-5458-4a21-9ba8-2dacaf2b3f8a">
+                            <input type="hidden" name="redirect" value="/thankyou.html">
 
                             <!-- Full Name -->
                             <div class="mb-3">
@@ -1154,63 +1155,64 @@
 
                 <div class="modal-body">
                     <form action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="6e2dec1d-5458-4a21-9ba8-2dacaf2b3f8a">
+                        <input type="hidden" name="access_key" value="6e2dec1d-5458-4a21-9ba8-2dacaf2b3f8a">
+                        <input type="hidden" name="redirect" value="/thankyou.html">
 
-    <!-- Full Name -->
-    <div class="mb-3">
-        <input
-            type="text"
-            name="Name"
-            class="form-control"
-            placeholder="Full Name"
-            required
-            minlength="3"
-            maxlength="50"
-            pattern="[A-Za-z\s]+"
-            title="Please enter a valid name (letters and spaces only).">
-    </div>
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <input
+                                type="text"
+                                name="Name"
+                                class="form-control"
+                                placeholder="Full Name"
+                                required
+                                minlength="3"
+                                maxlength="50"
+                                pattern="[A-Za-z\s]+"
+                                title="Please enter a valid name (letters and spaces only).">
+                        </div>
 
-    <!-- Email -->
-    <div class="mb-3">
-        <input
-            type="email"
-            name="Email"
-            class="form-control"
-            placeholder="Email"
-            required>
-    </div>
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <input
+                                type="email"
+                                name="Email"
+                                class="form-control"
+                                placeholder="Email"
+                                required>
+                        </div>
 
-    <!-- Country -->
-    <div class="mb-3">
-        <select class="form-select" name="Country" required>
-            <option value="" selected disabled>Select Country</option>
-            <option value="India">India</option>
-            <option value="UAE">UAE</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="USA">USA</option>
-            <option value="Canada">Canada</option>
-            <option value="Singapore">Singapore</option>
-        </select>
-    </div>
+                        <!-- Country -->
+                        <div class="mb-3">
+                            <select class="form-select" name="Country" required>
+                                <option value="" selected disabled>Select Country</option>
+                                <option value="India">India</option>
+                                <option value="UAE">UAE</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Singapore">Singapore</option>
+                            </select>
+                        </div>
 
-    <!-- Phone -->
-    <div class="mb-3">
-        <input
-            type="tel"
-            name="Phone"
-            class="form-control"
-            placeholder="Phone Number"
-            required
-            pattern="[0-9]{10,15}"
-            minlength="10"
-            maxlength="15"
-            title="Please enter a valid phone number (10-15 digits).">
-    </div>
+                        <!-- Phone -->
+                        <div class="mb-3">
+                            <input
+                                type="tel"
+                                name="Phone"
+                                class="form-control"
+                                placeholder="Phone Number"
+                                required
+                                pattern="[0-9]{10,15}"
+                                minlength="10"
+                                maxlength="15"
+                                title="Please enter a valid phone number (10-15 digits).">
+                        </div>
 
-    <button class="btn btn-gold w-100" type="submit">
-        Request A Private Visit
-    </button>
-</form>
+                        <button class="btn btn-gold w-100" type="submit">
+                            Request A Private Visit
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
