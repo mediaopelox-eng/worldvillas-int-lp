@@ -108,20 +108,21 @@
         </div>
     </section>
     <!--========================== FOOTER ===========================-->
+    <!--========================== FOOTER ===========================-->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <h3 class="mb-4">World Villas</h3>
+                <div class="col-lg-4 col-12">
+                    <img src="image/logo.webp" class="logo" alt="World Villas">
 
                     <p>
                         Luxury villas crafted for global citizens, combining elegant architecture, nature and
                         exceptional connectivity.
                     </p>
-                    <img src="image/wv-rera.png" style="max-width: 250px;">
+                    <img src="image/wv-rera.png" class="rera" style="max-width: 250px;">
                 </div>
 
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-4">
                     <h5>Company</h5>
 
                     <ul class="list-unstyled">
@@ -135,7 +136,7 @@
                     </ul>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 col-8">
                     <h5>Contact</h5>
 
                     <p>World Villas, 10 Millionaire Street, before Saltt Restaurant, Chowk – Mumbai 3.0</p>
@@ -145,7 +146,7 @@
                     <p><a href="tel:+91 08069250076">+91 08069250076</a></p>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 col-12">
                     <h5>Follow Us</h5>
                     <a href="https://www.facebook.com/profile.php?id=100091756993900" class="social">
                         <i class="fab fa-facebook-f"></i>
@@ -186,31 +187,62 @@
                 <div class="modal-body">
                     <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="6e2dec1d-5458-4a21-9ba8-2dacaf2b3f8a">
+                        <input type="hidden" name="redirect" value="/thankyou.html">
+
+                        <!-- Full Name -->
                         <div class="mb-3">
-                            <input type="text" name="Name" class="form-control" placeholder="Full Name" />
+                            <input
+                                type="text"
+                                name="Name"
+                                class="form-control"
+                                placeholder="Full Name"
+                                required
+                                minlength="3"
+                                maxlength="50"
+                                pattern="[A-Za-z\s]+"
+                                title="Please enter a valid name (letters and spaces only).">
                         </div>
 
+                        <!-- Email -->
                         <div class="mb-3">
-                            <input type="email" name="Email" class="form-control" placeholder="Email" />
+                            <input
+                                type="email"
+                                name="Email"
+                                class="form-control"
+                                placeholder="Email"
+                                required>
                         </div>
 
+                        <!-- Country -->
                         <div class="mb-3">
-                            <select class="form-select" name="Country">
-                                <option selected>Country</option>
-                                <option>India</option>
-                                <option>UAE</option>
-                                <option>United Kingdom</option>
-                                <option>USA</option>
-                                <option>Canada</option>
-                                <option>Singapore</option>
+                            <select class="form-select" name="Country" required>
+                                <option value="" selected disabled>Select Country</option>
+                                <option value="India">India</option>
+                                <option value="UAE">UAE</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Singapore">Singapore</option>
                             </select>
                         </div>
 
+                        <!-- Phone -->
                         <div class="mb-3">
-                            <input type="tel" name="Phone" class="form-control" placeholder="Phone Number" />
+                            <input
+                                type="tel"
+                                name="Phone"
+                                class="form-control"
+                                placeholder="Phone Number"
+                                required
+                                pattern="[0-9]{10,15}"
+                                minlength="10"
+                                maxlength="15"
+                                title="Please enter a valid phone number (10-15 digits).">
                         </div>
 
-                        <button class="btn btn-gold w-100" type="submit">Request A Private Visit</button>
+                        <button class="btn btn-gold w-100" type="submit">
+                            Request A Private Visit
+                        </button>
                     </form>
                 </div>
             </div>
@@ -269,6 +301,24 @@
                 behavior: "smooth",
             });
         });
+    </script>
+    <script>
+        (() => {
+            'use strict';
+
+            const forms = document.querySelectorAll('form');
+
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
     </script>
   </body>
 </html>
