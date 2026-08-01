@@ -10,7 +10,7 @@ GOOGLE FONT
 ROOT
 ===========================*/
 :root {
-    --gold: #c6a769;
+    --gold: #cbb997;
     --gold-light: #d9bc82;
     --gold-dark: #a98445;
     --dark: #0f1115;
@@ -141,7 +141,7 @@ BUTTONS
 }
 .btn-gold {
     background: var(--gold);
-    color: #fff;
+    color: #000;
     border: none;
 }
 .btn-gold:hover {
@@ -158,6 +158,9 @@ BUTTONS
     background: #fff;
     color: #111;
 }
+.slider {
+    padding: 0;
+}
 /*==========================
 HERO
 ===========================*/
@@ -167,7 +170,7 @@ HERO
     display: flex;
     align-items: center;
     color: #fff;    
-    background: url(../image/intro-bg.webp) center / cover no-repeat;
+    background: url(../image/intro-bg-eve.webp) center / cover no-repeat;
     padding: 100px 0 0 0;
 }
 .hero video {
@@ -181,7 +184,7 @@ HERO
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(5, 5, 5, 0.75), rgba(5, 5, 5, 0.65));
+    background: linear-gradient(90deg, rgba(5, 5, 5, 0.75), rgba(5, 5, 5, 0.65), #00000026);
 }
 .hero .container {
     position: relative;
@@ -223,7 +226,7 @@ HERO FORM
     backdrop-filter: blur(20px);
     padding: 35px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid #a78a54;
 }
 .hero-form h4 {
     font-size: 2rem;
@@ -488,7 +491,7 @@ STATISTICS
 .counter-box h2 {
     font-family: "Playfair Display", serif;
     font-size: 64px;
-    color: var(--gold);
+    color: var(--gold-dark);
     font-weight: 700;
     margin-bottom: 10px;
 }
