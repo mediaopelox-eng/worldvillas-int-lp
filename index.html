@@ -40,6 +40,8 @@
       <!-- Swiper -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
       <!-- Custom CSS -->
       <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -199,7 +201,8 @@
                         </p>
 
                         <div class="hero-buttons">
-                            <button data-bs-toggle="modal" data-bs-target="#leadModal" class="btn btn-gold btn-lg"> Schedule Virtual Tour </button>
+                            
+                            <a href="https://www.youtube.com/watch?v=Xyj6e_Ll6vc" class="btn btn-gold btn-lg glightbox"> Virtual Tour </a>
 
                             <a href="#about" class="btn btn-outline-light btn-lg"> Explore Project </a>
                         </div>
@@ -836,9 +839,9 @@
                         <img src="image/gallery-9.webp" class="img-fluid rounded" alt="" />
                     </div>
 
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                         <img src="image/gallery-10.webp" class="img-fluid rounded" alt="" />
-                    </div>
+                    </div> -->
 
                     <div class="swiper-slide">
                         <img src="image/gallery-11.webp" class="img-fluid rounded" alt="" />
@@ -1306,6 +1309,11 @@
                 }, false);
             });
         })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <script>
+    const lightbox = GLightbox();
     </script>
     <!-- <script>
         const prices = {
