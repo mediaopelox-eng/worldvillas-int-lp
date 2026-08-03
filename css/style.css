@@ -100,26 +100,29 @@ NAVBAR
 .navbar {
     padding: 0;
     transition: 0.35s;
-    background: rgba(10, 10, 10, 0.85);
+    background: #e7dfcfd9;
     backdrop-filter: blur(10px);
 }
 .logo {
     height: 50px;
     width: auto;
+    /* filter: brightness(0) invert(1); */
+}
+footer .logo {
     filter: brightness(0) invert(1);
 }
 .navbar-nav {
     align-items: center;
 }
 .nav-link {
-    color: #fff !important;
+    color: #000 !important;
     font-size: 15px;
     font-weight: 500;
     margin: 0 10px;
     white-space: nowrap;
 }
 .nav-link:hover {
-    color: var(--gold) !important;
+    color: #000 !important;
 }
 .navbar-toggler {
     border: none;
@@ -150,6 +153,16 @@ BUTTONS
     color: #fff;
     box-shadow: 0 15px 35px rgba(198, 167, 105, 0.35);
 }
+.btn-black {
+    background: #000000;
+    color: var(--gold);
+    border: none;
+}
+.btn-black:hover {
+    background: #000000;
+    transform: scale(1.05);
+    color: var(--gold);
+}
 .btn-outline-light {
     border: 2px solid rgba(255, 255, 255, 0.65);
     color: #fff;
@@ -160,6 +173,43 @@ BUTTONS
 }
 .slider {
     padding: 0;
+    margin-top: -149px;
+}
+.carousel-caption {
+    text-align: left;
+}
+.carousel-caption h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 72px;
+    text-shadow: 5px 4px 11px rgb(0 0 0);
+}
+.carousel-caption p {
+    color: #fff;
+    font-size: 20px;
+    text-shadow: 5px 4px 11px rgb(0 0 0);
+}
+#arihant p {
+    font-size: 20px;
+    margin: 35px 0;
+}
+
+ul.stats span.count {
+    display: block;
+    /* font-family: "Playfair Display", serif; */
+    font-size: 52px;
+    color: var(--gold-dark);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+ul.stats li {
+    display: inline-block;
+    padding: 10px 45px;
+}
+ul.stats li:nth-child(2) {
+    border: solid #0f1115;
+    border-width: 0 1px;
 }
 /*==========================
 HERO
@@ -170,8 +220,10 @@ HERO
     display: flex;
     align-items: center;
     color: #fff;    
-    background: url(../image/intro-bg-eve.webp) center / cover no-repeat;
+    background: url(../image/aerial-intro-bg.webp) center / cover no-repeat;
     padding: 100px 0 0 0;
+    border: solid #a78a54;
+    border-width: 3px 0 3px 0;
 }
 .hero video {
     position: absolute;
@@ -500,7 +552,7 @@ STATISTICS
     color: #666;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 14px;
+    font-size: 16px;
 }
 /*==================================================
 CTA
@@ -518,6 +570,7 @@ CTA
 .cta-section p {
     color: rgba(255, 255, 255, 0.9);
     font-size: 18px;
+    margin: 20px 0 !important;
 }
 .cta-section .btn {
     background: #fff;
@@ -761,7 +814,7 @@ AMENITIES
 .amenity-box:hover i,
 .amenity-box:hover h5,
 .amenity-box:hover p {
-    color: #fff;
+    color: var(--dark);
 }
 /*==================================================
 LIFESTYLE
@@ -1244,7 +1297,7 @@ FLOATING BUTTONS
     border: none;
     border-radius: 50%;
     background: var(--gold);
-    color: #fff;
+    color: #000;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -1349,17 +1402,14 @@ RESPONSIVE
 }
 @media (max-width: 992px) {
     section {
-        padding: 80px 0;
+        padding: 50px 0;
     }
     .py-5 {
-        padding-top: 80px !important;
-        padding-bottom: 80px !important;
-    }
-    .navbar {
-        background: rgba(15, 17, 21, 0.97);
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
     }
     .hero {
-        padding: 120px 0 30px;
+        padding: 70px 0 30px;
         text-align: center;
     }
     .hero h1 {
@@ -1408,7 +1458,7 @@ RESPONSIVE
         font-size: 32px;
     }
     .counter-box h2 {
-        font-size: 70px;
+        font-size: 55px;
     }
     .gallery .swiper-slide img {
         height: 260px;
@@ -1480,6 +1530,25 @@ RESPONSIVE
     ul.navbar-nav li.nav-item {
         width: 100%;
     }
+    ul.stats li {
+        width: 33.33%;
+        float: left;
+        display: inline-block;
+        padding: 10px 10px;
+        line-height: 1.5;
+    }
+    ul.stats li:nth-child(2) {
+        border: solid #c5c5c5;
+        border-width: 0 1px;
+    }
+    ul.stats span.count {
+        display: block;
+        font-size: 34px;
+        margin-bottom: 6px;
+    }
+    .navbar>.container {
+        justify-content: center;
+    }
 }
 @media(max-width:768px) {
 
@@ -1507,7 +1576,29 @@ RESPONSIVE
     .bottom{
         font-size:1.2rem;
     }
-
+    .navbar-toggler {
+        display: none;
+    }
+    .slider {
+        margin-top: 0px;
+    }
+    .carousel-caption {
+        right: 5%;
+        left: 5%;
+    }
+    .carousel-caption h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 30px;
+    }
+    .carousel-caption p {
+        font-size: 16px;
+    }
+    .location img {
+        margin-bottom: 30px;
+    }
+    .cta-section h2 {
+        font-size: 29px;
+    }
 }
 @media (max-width: 576px) {
     .hero h1 {
