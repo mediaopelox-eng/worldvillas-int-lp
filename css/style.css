@@ -60,7 +60,7 @@ ul {
 section {
     position: relative;
     overflow: hidden;
-    padding: 100px 0;
+    padding: 50px 0;
 }
 /*==========================
 TYPOGRAPHY
@@ -236,7 +236,7 @@ HERO
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(5, 5, 5, 0.75), rgba(5, 5, 5, 0.65), #00000026);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0.75), rgba(5, 5, 5, 0.65), #00000026);
 }
 .hero .container {
     position: relative;
@@ -251,7 +251,7 @@ HERO
 }
 .hero h1 {
     font-family: "Playfair Display", serif;
-    font-size: 72px;
+    font-size: 70px;
     line-height: 1.1;
     font-weight: 700;
     margin-bottom: 25px;
@@ -572,13 +572,10 @@ ABOUT SECTION
 INVESTMENT
 ==================================================*/
 .investment {
-    background:
-        linear-gradient(rgba(15, 17, 21, 0.97), rgba(15, 17, 21, 0.97)),
-        url("../images/investment-bg.jpg") center/cover;
 }
 .investment-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #f7f2e975;
+    border: 1px solid #f7f2e9;
     border-radius: 20px;
     padding: 40px 30px;
     height: 100%;
@@ -603,12 +600,11 @@ INVESTMENT
     margin-bottom: 25px;
 }
 .investment-card h4 {
-    color: #fff;
+    color: #000;
     margin-bottom: 18px;
     font-family: "Playfair Display", serif;
 }
 .investment-card p {
-    color: #d0d0d0;
     margin-bottom: 0;
 }
 /*==================================================
@@ -699,8 +695,8 @@ CARD HOVER EFFECT
 SECTION SPACING
 ==================================================*/
 .py-5 {
-    padding-top: 110px !important;
-    padding-bottom: 110px !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
 }
 /*==================================================
 TEXT SELECTION
@@ -949,29 +945,7 @@ PREMIUM IMAGE EFFECT
 .amenity-box:hover::after {
     left: 150%;
 }
-/*==================================================
-SECTION DIVIDERS
-==================================================*/
-.master-plan::before {
-    content: "";
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    background: rgba(198, 167, 105, 0.05);
-    border-radius: 50%;
-    right: -60px;
-    top: -60px;
-}
-.amenities::after {
-    content: "";
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    background: rgba(198, 167, 105, 0.05);
-    border-radius: 50%;
-    left: -80px;
-    bottom: -80px;
-}
+
 /*==================================================
 GOLD UNDERLINE
 ==================================================*/
@@ -1665,9 +1639,19 @@ RESPONSIVE
     .slider {
         margin-top: 0px;
     }
+    .carousel-indicators {
+        right: 0;
+        top: 89px;
+        bottom: auto;
+        left: auto;
+        margin: 0 20px 0 0;
+    }
     .carousel-caption {
-        right: 5%;
-        left: 5%;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 60px 20px 20px 20px;
+        background: linear-gradient(0deg, rgb(0 0 0), rgb(5 5 5 / 0%));
     }
     .carousel-caption h2 {
         font-family: "Playfair Display", serif;
@@ -1675,6 +1659,7 @@ RESPONSIVE
     }
     .carousel-caption p {
         font-size: 16px;
+        margin-bottom: 0;
     }
     .location img {
         margin-bottom: 30px;
