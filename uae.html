@@ -1,0 +1,1376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <title>World Villas | Luxury Villas In Mumbai 3.0</title>
+      <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
+      <link rel="manifest" href="image/favicon/site.webmanifest">
+      <meta
+          name="description"
+          content="Discover luxury villas near Mumbai designed for global investors, NRIs and families seeking premium living."
+      />
+
+      <meta name="keywords" content="Luxury Villas India, Villas Near Mumbai, NRI Investment, World Villas" />
+
+      <meta name="author" content="World Villas" />
+
+      <!-- Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+      <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+      <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+      />
+
+      <!-- AOS -->
+      <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+      <!-- Swiper -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+      <!--========================== NAVBAR ===========================-->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.webp" class="logo" alt="World Villas" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#investment">Investment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#villas">Villas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#amenities">Amenities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
+
+                    <li class="nav-item ms-lg-3">
+                        <button data-bs-toggle="modal" data-bs-target="#leadModal" class="btn btn-black"> Schedule Visit </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="slider">
+        <div id="heroSlider" class="carousel slide d-none d-lg-block" data-bs-ride="carousel" data-bs-interval="2000">
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="3"></button>
+            </div>
+
+            <!-- Slides -->
+            <div class="carousel-inner hidden-xs">
+
+                <div class="carousel-item active">
+                    <img src="image/intro-gate.webp" class="d-block w-100" alt="Slide 1">
+                    <div class="carousel-caption">
+                        <h2>Grand Gated Sanctuary</h2>
+                        <p>Experience Unrivaled European Architecture and Elite Privacy In Mumbai 3.0</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="image/intro-bg-pool.webp" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption">
+                        <h2>Moments of Timeless Joy</h2>
+                        <p>Experience Private Poolside Living Designed for Generations of Luxury</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="image/intro-bg-villa.webp" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption">
+                        <h2>Golden Hour Elegance</h2>
+                        <p>Step into a magnificent independent home designed with sprawling lawns and beautiful sunset views.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="image/intro-bg-yoga.webp" class="d-block w-100" alt="Slide 3">
+                    <div class="carousel-caption">
+                        <h2>The Art of Wellbeing</h2>
+                        <p>Exclusive Villa Lawns Designed for Ultimate Relaxation and Inner Peace</p>
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+        <div id="m-heroSlider" class="carousel slide d-block d-lg-none" data-bs-ride="carousel" data-bs-interval="2000">
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#m-heroSlider" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#m-heroSlider" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#m-heroSlider" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#m-heroSlider" data-bs-slide-to="3"></button>
+            </div>
+
+            <!-- Slides -->
+            <div class="carousel-inner hidden-xs">
+
+                <div class="carousel-item active">
+                    <img src="image/mobile-slide-1.webp" class="d-block w-100" alt="Slide 1">
+                    <div class="carousel-caption">
+                        <h2>Grand Gated Sanctuary</h2>
+                        <p>Experience Unrivaled European Architecture and Elite Privacy In Mumbai 3.0</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="image/mobile-slide-2.webp" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption">
+                        <h2>Moments of Timeless Joy</h2>
+                        <p>Experience Private Poolside Living Designed for Generations of Luxury</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/mobile-slide-4.webp" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption">
+                        <h2>Golden Hour Elegance</h2>
+                        <p>Step into a magnificent independent home designed with sprawling lawns and beautiful sunset views.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="image/mobile-slide-3.webp" class="d-block w-100" alt="Slide 3">
+                    <div class="carousel-caption">
+                        <h2>The Art of Wellbeing</h2>
+                        <p>Exclusive Villa Lawns Designed for Ultimate Relaxation and Inner Peace</p>
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#m-heroSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#m-heroSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+    </section>
+    <!--========================== HERO ===========================-->
+    <section class="hero">
+        <!-- <video autoplay muted loop playsinline>
+            <source src="video/hero.mp4" type="video/mp4" />
+        </video> -->
+
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8">
+                    <div data-aos="fade-right">
+                        <span class="hero-subtitle"> PRESTIGE HOMES FOR NRI BUYERS </span>
+
+                        <h1>
+                            Experience Timeless Luxury
+
+                            <span> In Mumbai 3.0 </span>
+                        </h1>
+
+                        <p>
+                            An exclusive gated community of premium villas designed for homeowners, NRIs, global investors, and families offering you a golden opportunity to gift your parents the peaceful retirement they deserve while securing a high-yield asset.
+                        </p>
+
+                        <div class="hero-buttons">
+                            
+                            <a href="https://youtu.be/rYwTLBfIVtU" class="btn btn-gold btn-lg glightbox"> Take A Video Tour </a>
+
+                            <!-- <a href="#about" class="btn btn-outline-light btn-lg"> Explore Project </a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="hero-form shadow-lg" data-aos="fade-left">
+                        <h4>Luxury villas starting at <span id="villa-price">₹ 6 CR</span> <br><small>(Land + Construction)</small></h4>
+
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="c3c0d2a0-c0af-4bfa-a6a4-839fd5c06c05">
+                            <input type="hidden" name="redirect" value="/thankyou.html">
+                            <!-- This Web3Forms Access Key is configured to send leads to: opeloxm@gmail.com -->
+                            <!-- Full Name -->
+                            <div class="mb-3">
+                                <input
+                                    type="text"
+                                    name="Name"
+                                    class="form-control"
+                                    placeholder="Full Name"
+                                    required
+                                    minlength="3"
+                                    maxlength="50"
+                                    pattern="[A-Za-z\s]+"
+                                    title="Please enter a valid name (letters and spaces only).">
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <input
+                                    type="email"
+                                    name="Email"
+                                    class="form-control"
+                                    placeholder="Email"
+                                    required>
+                            </div>
+
+                            <!-- Budget -->
+                            <div class="mb-3">
+                                <select class="form-select" name="Budget" required>
+                                    <option value="" selected disabled>Select Budget</option>
+                                    <option value="5 Cr - 6 Cr">5 Cr - 6 Cr</option>
+                                    <option value="6 Cr - 7 Cr">6 Cr - 7 Cr</option>
+                                    <option value="7 Cr - 8 Cr">7 Cr - 8 Cr</option>
+                                    <option value="8 Cr - 9 Cr">8 Cr - 9 Cr</option>
+                                    <option value="9 Cr - 10 Cr">9 Cr - 10 Cr</option>
+                                    <option value="10 Cr +">10 Cr +</option>
+                                </select>
+                            </div>
+
+                            <!-- Country -->
+                            <div class="mb-3">
+                                <select class="form-select" name="Country" required>
+                                    <option value="" selected disabled>Select Country</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                </select>
+                            </div>
+
+                            <!-- City -->
+                            <div class="mb-3">
+                                <input
+                                    type="text"
+                                    name="City"
+                                    class="form-control"
+                                    placeholder="City"
+                                    required>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="mb-3">
+                                <input
+                                    type="tel"
+                                    name="Phone"
+                                    class="form-control"
+                                    placeholder="Phone Number"
+                                    required
+                                    pattern="[0-9]{10,15}"
+                                    minlength="10"
+                                    maxlength="15"
+                                    title="Please enter a valid phone number (10-15 digits).">
+                            </div>
+
+                            <button class="btn btn-gold w-100" type="submit">
+                                Request A Virtual Visit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="bounce">
+                        <h3 class="rent-info">Enjoy steady rental earnings of Approx. ₹45 Lacs P.A.</h3>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="payment-plan-block">
+                        <div class="banner" data-aos="fade-up">
+                            <div class="row g-3 align-items-stretch">
+                                <div class="col-lg-7">
+                                    <h2 class="banner-title">
+                                        Lock in Todays price &amp; <br>Pay as your wealth grows
+                                    </h2>
+                                </div>
+                                <div class="col-lg-5">
+                                    <img src="image/payment-plan-small.png" alt="payment plan">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--========================== ABOUT ===========================-->
+    <section id="about" class="about py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <span class="section-tag"> Welcome to World Villas </span>
+
+                    <h2 class="section-title mt-3">Crafted for Global Living, Inspired by Nature in Mumbai 3.0</h2>
+
+                    <p class="lead mt-4">
+                        World Villas is an exclusive luxury villa community located in the heart of Mumbai 3.0 fastest growing strategic investment corridor. Designed with deep emotional resonance, it offers a serene sanctuary where you can gift your beloved parents the peaceful retirement, fresh air, and comfort they truly deserve, while securing a high-yield asset for your family’s future.
+                    </p>
+
+                    <p class="lead">
+                        Tailored specifically for families, NRIs, and international investors, this master development seamlessly combines world class contemporary architecture, lush natural landscapes, and premier lifestyle amenities. With spacious interiors, private manicured gardens, and premium finishes, each freehold home is meticulously designed to deliver both extraordinary living and strong financial growth.
+                    </p>
+
+                    <!-- <div class="row mt-4">
+                        <div class="col-6 mb-3">
+                            <div class="feature-item">
+                                <i class="fa-solid fa-check"></i>
+
+                                Premium Gated Community
+                            </div>
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <div class="feature-item">
+                                <i class="fa-solid fa-check"></i>
+
+                                Contemporary Architecture
+                            </div>
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <div class="feature-item">
+                                <i class="fa-solid fa-check"></i>
+
+                                Smart Infrastructure
+                            </div>
+                        </div>
+
+                        <div class="col-6 mb-3">
+                            <div class="feature-item">
+                                <i class="fa-solid fa-check"></i>
+
+                                Green Open Spaces
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <button data-bs-toggle="modal" data-bs-target="#leadModal"  class="btn btn-gold mt-4"> Schedule a Consultation </button>
+                </div>
+
+                <div class="col-lg-5" data-aos="fade-left">
+                    <!-- <div class="row g-3">
+                        <div class="col-6">
+                            <img src="image/about-2.webp" class="img-fluid rounded shadow" alt="Luxury Villa" />
+                        </div>
+
+                        <div class="col-6">
+                            <img
+                                src="image/about-3.webp"
+                                class="img-fluid rounded shadow"
+                                alt="Luxury Interior"
+                            />
+                        </div>
+
+                        <div class="col-12">
+                            <img
+                                src="image/about-1.webp"
+                                class="img-fluid rounded shadow"
+                                alt="Master Community"
+                            />
+                        </div>
+                    </div> -->
+
+                    <img src="image/about-wv.webp" alt="villa with Swimming Pool">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--========================== AMENITIES ===========================-->
+    <section id="amenities" class="amenities py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag"> EXCLUSIVE VILLA COMMUNITY </span>
+
+                <h2 class="section-title mt-3">Mastercrafted Villas & Iconic Landmarks</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <img src="image/am-11.webp">
+                        <h5>Club 10 Gymkhana</h5>
+                        <p>Exp. Gentlemen Club and wellness centre at this massive 10 acre private members only sports gymkhana.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <img src="image/am-4.webp">
+                        <h5>Open Air Cinema</h5>
+                        <p>Immerse yourself in an ultra luxurious cinematic experience under a magnificent canopy of stars.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <img src="image/am-2.webp">
+                        <h5>Riverside Beach Pool</h5>
+                        <p>Experience a breathtaking man made beach pool seamlessly blending modern leisure with a serene riverside setting.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <img src="image/am-6.webp">
+                        <h5>5-Star Hotel & Spa</h5>
+                        <p>Aqua Sky Pool Lounge Only For Adults & Couples And 270° Infinity Swim & Dine Experience.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <img src="image/am-3.webp">
+                        <h5>IPL Size Cricket Ground</h5>
+                        <p>Play like a legend on a magnificent international scale cricket ground inspired by the heritage of Lord's.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <img src="image/am-10.webp">
+                        <h5>Forest Grove Woodland</h5>
+                        <p>Breathe fresh, crisp air within a magnificent 6 acre mango orchaeds tree woodland designed for peaceful morning walks.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <img src="image/am-1.webp">
+                        <h5>Majesta Grand Banquets</h5>
+                        <p>Host grand celebrations at a 25,000 sq. ft. luxury venue featuring magnificent outdoor lawns.</p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <img src="image/am-8.webp">
+                        <h5>Golf Course</h5>
+                        <p>Perfect your swing on a magnificent, championship style golf course designed for elite leisure and precision play.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!--========================== VILLA COLLECTION ===========================-->
+    <section id="villas" class="villa-collection py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag"> Our Collection </span>
+
+                <h2 class="section-title mt-3">Luxury Villas Designed for Modern Living</h2>
+
+                <p class="mt-3">
+                    Spacious homes crafted with elegant architecture, premium finishes and seamless indoor-outdoor living.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="villa-card">
+                        <img src="image/villa-extra-large.webp" class="img-fluid" alt="Premium Villa" />
+
+                        <div class="villa-content">
+                            <h4>The Grand Estate (Extra Large Villa)</h4>
+
+                            <p>
+                                A magnificent family sanctuary boasting voluminous open-plan living areas, private landscaped grounds, and world-class architectural detailing.
+                            </p>
+
+                            <!-- <ul class="list-unstyled">
+                                <li><i class="fa-solid fa-bed"></i> 4 Master Bedrooms</li>
+                                <li><i class="fa-solid fa-ruler-combined"></i> Expansive Open-Plan Layout</li>
+                                <li><i class="fa-solid fa-car"></i> Private Multi-Car Garage</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="villa-card">
+                        <img src="image/villa-super-large.webp" class="img-fluid" alt="Luxury Villa" />
+
+                        <div class="villa-content">
+                            <h4>The Signature Residence (Super Large Villa)</h4>
+
+                            <p>
+                                Contemporary design meeting timeless elegance, featuring seamless indoor-outdoor transitions and dedicated spaces for lavish outdoor entertaining.
+                            </p>
+
+                            <!-- <ul class="list-unstyled">
+                                <li><i class="fa-solid fa-bed"></i> 5 Generous Bedrooms</li>
+                                <li><i class="fa-solid fa-tree"></i> Private Landscaped Garden</li>
+                                <li><i class="fa-solid fa-water-ladder"></i> Custom Swimming Pool Provision</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="villa-card">
+                        <img src="image/villa-large.webp" class="img-fluid" alt="Luxury Estate" />
+
+                        <div class="villa-content">
+                            <h4>The Crown Mansion (Large Villa)</h4>
+
+                            <p>
+                                The ultimate expression of elite status, offering sweeping panoramic vistas, ultimate privacy, and bespoke wellness zones.
+                            </p>
+
+                            <!-- <ul class="list-unstyled">
+                                <li><i class="fa-solid fa-bed"></i> 6 Executive Bedrooms</li>
+                                <li><i class="fa-solid fa-spa"></i> Private Wellness & Spa Zone</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> Advanced Multi-Tier Security</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--========================== LOCATION ===========================-->
+    <section id="location" class="location py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1318.8331058963195!2d73.26310299869344!3d18.901036273683633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e58340b570eb%3A0x53ac8301eea01f70!2sArihant%20World%20Villas!5e1!3m2!1sen!2sin!4v1784884629786!5m2!1sen!2sin" class="map-iframe" width="600" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
+                     <img src="image/location.webp">
+                </div>
+                <div class="col-lg-6">
+                    <span class="section-tag"> Prime Location </span>
+
+                    <h2 class="section-title mt-3">Connected to Everything That Matters in Mumbai 3.0</h2>
+
+                    <p class="mt-4">
+                        Strategically positioned within the transformative infrastructure landscape of Mumbai 3.0, thriving business districts, and elite leisure destinations, World Villas ensures frictionless international connectivity while preserving absolute countryside serenity.
+                    </p>
+
+                    <div class="location-list mt-4">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="d-flex mb-3">
+                              <i class="fa-solid fa-plane me-3 mt-1"></i>
+
+                              <div>
+                                  <h6>Navi Mumbai International Airport</h6>
+
+                                  <small>45 Minutes</small>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex">
+                              <i class="fa-solid fa-city me-3 mt-1"></i>
+
+                              <div>
+                                  <h6>Business & Commercial Hubs</h6>
+
+                                  <small>40 Minutes</small>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex mb-3">
+                              <i class="fa-solid fa-road me-3 mt-1"></i>
+
+                              <div>
+                                  <h6>Mumbai Trans Harbour Link (Atal Setu)</h6>
+
+                                  <small>60 Minutes</small>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-flex mb-3">
+                              <i class="fa-solid fa-train me-3 mt-1"></i>
+
+                              <div>
+                                  <h6>Railway & Expressway Connectivity</h6>
+
+                                  <small>30 Minutes</small>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--========================== WHY INVEST ===========================-->
+    <section id="investment" class="investment py-5 text-white">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag"> INVESTMENT OPPORTUNITY </span>
+
+                <h2 class="section-title mt-3">Why Invest in World Villas?</h2>
+
+                <p class="mt-3">
+                    Situated in a fast-growing area with robust infrastructure expansion, high-end lifestyle options, and outstanding long-term capital growth potential.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="investment-card">
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <h4>Growth Corridor</h4>
+
+                        <p>
+                            Positioned in a high-growth corridor delivering strong capital appreciation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="investment-card">
+                        <i class="fa-solid fa-plane-departure"></i>
+
+                        <h4>Airport Connectivity</h4>
+
+                        <p>Seamless access to international airports and major regional transport hubs.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="investment-card">
+                        <i class="fa-solid fa-gem"></i>
+
+                        <h4>Luxury Lifestyle</h4>
+
+                        <p>Resort-inspired amenities and absolute privacy within lush green surroundings.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="investment-card">
+                        <i class="fa-solid fa-house"></i>
+
+                        <h4>Limited Inventory</h4>
+
+                        <p>Exclusive low-density villa collection designed to preserve long-term scarcity.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="investment-card">
+                        <i class="fa-solid fa-earth-asia"></i>
+
+                        <h4>NRI Friendly</h4>
+
+                        <p>Dedicated NRI buyer assistance with secure digital documentation support.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="investment-card">
+                        <i class="fa-solid fa-shield"></i>
+
+                        <h4>Trusted Development</h4>
+
+                        <p>
+                            Built to rigorous quality standards by trusted luxury developers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--========================== NRI BUYERS ===========================-->
+    <section class="nri py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag"> International Buyers </span>
+
+                <h2 class="section-title mt-3">Buying From NRI Made Simple</h2>
+                <p class="mt-4">A streamlined, transparent acquisition process designed exclusively for global citizens, offering end-to-end digital assistance and secure cross-border investment support.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="nri-box">
+                        <i class="fa-solid fa-video"></i>
+
+                        <h5>Virtual Tours</h5>
+
+                        <p>Schedule immersive, live online architectural walkthroughs from anywhere in the world at your convenience.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="nri-box">
+                        <i class="fa-solid fa-file-signature"></i>
+
+                        <h5>Digital Documentation</h5>
+
+                        <p>Secure, fully compliant digital paperwork supported by dedicated advisory teams for absolute peace of mind.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="nri-box">
+                        <i class="fa-solid fa-scale-balanced"></i>
+
+                        <h5>Legal Assistance</h5>
+
+                        <p>Comprehensive title clarity checks and expert legal guidance throughout your entire cross-border purchasing journey.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="nri-box">
+                        <i class="fa-solid fa-headset"></i>
+
+                        <h5>Relationship Manager</h5>
+
+                        <p>Dedicated personal concierge assistance providing white-glove service both before, during, and after your acquisition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--========================== CALL TO ACTION ===========================-->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row align-items-center text-center">
+                <div class="col-lg-8 offset-lg-2">
+                    <h2>Claim Your Piece of Timeless<br> Luxury Today</h2>
+                    <p class="mb-0 mt-3">
+                        Schedule a private virtual walkthrough or an exclusive consultation to secure your freehold estate near Mumbai with complete international support.
+                    </p>
+                    <button data-bs-toggle="modal" data-bs-target="#leadModal" class="btn btn-gold btn-lg" style="margin-top: 30px;"> Book Your Private Tour </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--========================== STATISTICS ===========================-->
+    <section class="statistics">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-6">
+                    <div class="counter-box">
+                        <h2 class="counter">90 <small style="font-size: 0.5em;">Acres</small></h2>
+                        <p>Gated Community</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <div class="counter-box">
+                        <h2 class="counter">400</h2>
+                        <p>Luxury Villas</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <div class="counter-box">
+                        <h2 class="counter">10 <small style="font-size: 0.5em;">Acres</small></h2>
+                        <p>Club 10 Gymkhana</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <div class="counter-box">
+                        <h2 class="counter">10 <small style="font-size: 0.5em;">Acres</small></h2>
+                        <p>5 Star Hotel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--========================== GALLERY ===========================-->
+    <section id="gallery" class="gallery py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag"> Project Gallery </span>
+
+                <h2 class="section-title mt-3">Discover the World Villas Experience</h2>
+
+                <p class="mt-3">
+                    Immerse yourself in exquisite interior architecture, verdant landscapes, and meticulously crafted lifestyle spaces designed for the global elite.
+                </p>
+            </div>
+
+            <div class="swiper gallerySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="image/gallery-1.webp" class="img-fluid rounded" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="image/gallery-2.webp" class="img-fluid rounded" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="image/gallery-3.webp" class="img-fluid rounded" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="image/gallery-4.webp" class="img-fluid rounded" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="image/gallery-5.webp" class="img-fluid rounded" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="image/gallery-6.webp" class="img-fluid rounded" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="image/gallery-7.webp" class="img-fluid rounded" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="image/gallery-8.webp" class="img-fluid rounded" alt="" />
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="image/gallery-9.webp" class="img-fluid rounded" alt="" />
+                    </div>
+
+                    <!-- <div class="swiper-slide">
+                        <img src="image/gallery-10.webp" class="img-fluid rounded" alt="" />
+                    </div> -->
+
+                    <div class="swiper-slide">
+                        <img src="image/gallery-11.webp" class="img-fluid rounded" alt="" />
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--========================== TESTIMONIALS ===========================-->
+    <!-- <section class="testimonials py-5 bg-dark text-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag"> Testimonials </span>
+
+                <h2 class="section-title text-white mt-3">What Our Clients Say</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p>
+                            "Securing a freehold estate here was seamless from London. The transparency and long-term capital potential are unmatched."
+                        </p>
+
+                        <h5>Tariq Al-Hashimi</h5>
+
+                        <small> Dubai, UAE </small>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p>
+                            "A magnificent low-density sanctuary. The digital documentation and virtual walkthroughs made purchasing from abroad effortless."
+                        </p>
+
+                        <h5>Dr. Alistair Vance</h5>
+
+                        <small> London, UK </small>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p>
+                            "Exceptional infrastructure growth and world-class amenities. It is a rare blend of pristine nature and high-yield real estate."
+                        </p>
+
+                        <h5>Fatima Al-Mansoor</h5>
+
+                        <small> Abu Dhabi, UAE </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!--========================== CLUB10 ===========================-->
+    <section id="arihant">
+      <div class="container">
+        <div class="text-center">
+            <span class="section-tag"> About Us </span>
+            <h2 class="section-title mt-3">Arihant Superstructures Ltd.</h2>
+            <p>With a legacy rooted in trust, ethics, and decades of excellence, Arihant embodies competence and innovation in the real estate realm. We believe that true luxury isn’t just measured in square feet it’s found in the lives we shape and the unique lifestyles we transform through visionary design and uncompromising quality.</p>
+            <ul class="stats">
+                <li><span class="count">10M +</span> Sq. Ft. Developed</li>
+                <li><span class="count">30 +</span> Years in Real Estate</li>
+                <li><span class="count">12K +</span> Homes Delivered</li>
+            </ul>
+        </div>
+      </div>
+    </section>
+
+    <!--========================== FAQ ===========================-->
+    <section id="faq" class="faq py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag"> Frequently Asked Questions </span>
+
+                <h2 class="section-title mt-3">Everything You Need to Know</h2>
+            </div>
+
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                What makes World Villas a unique investment?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                It combines premium luxury township living with high capital appreciation potential and excellent city connectivity.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                What is World Villas?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                It is a luxury 90-acre villa community located in Mumbai 3.0.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Where is the project situated?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                It is positioned near key infrastructure like the Navi Mumbai International Airport and Atal Setu.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Is the project Real Estate Regulatory Authority approved?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes, World Villas is fully Real Estate Regulatory Authority compliant with all legal clearances and verified land titles in place. We can share the Real Estate Regulatory Authority registration number and legal documents during your site visit.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                What types of properties are available?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                 The estate features spacious, independent luxury villas with private lawns.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                What major amenities are included?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                 Residents get access to a 10-acre Club 10 Gymkhana, a 5-star hotel and spa, and a beach pool.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                Is the project suitable for international and NRI buyers?
+              </button>
+            </h2>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                 Yes, it offers complete digital documentation and secure remote purchasing support for overseas clients.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                How can I schedule a visit?
+              </button>
+            </h2>
+            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                 You can easily book a private on-site screening or virtual walkthrough through the website.
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>
+
+    <!--========================== CLUB10 ===========================-->
+    <section id="club-10" style="background-image: url(image/club-10-bg.webp);">
+      <div class="container">
+        <img src="image/c10-logo.png">
+        <h2 class="section-title">Mumbai's Private Members Only Club</h2>
+        <p class="section-body mt-3">Your private destination for 'my time  my life' • Sports • Clubbing • Leisure</p>
+      </div>
+    </section>
+
+    <!--========================== FOOTER ===========================-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                    <img src="image/logo.webp" class="logo" alt="World Villas">
+
+                    <p>
+                        Luxury villas crafted for global citizens, combining elegant architecture, nature and
+                        exceptional connectivity.
+                    </p>
+                    <img src="image/wv-rera.png" class="Real Estate Regulatory Authority" style="max-width: 250px;">
+                </div>
+
+                <div class="col-lg-2 col-4">
+                    <h5>Company</h5>
+
+                    <ul class="list-unstyled">
+                        <li><a href="#about">About</a></li>
+
+                        <li><a href="#investment">Investment</a></li>
+
+                        <li><a href="#gallery">Gallery</a></li>
+
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-8">
+                    <h5>Contact</h5>
+
+                    <p>World Villas, 10 Millionaire Street, before Saltt Restaurant, Chowk – Mumbai 3.0</p>
+
+                    <p><a href="mailto:enquiry@worldvillas.in">enquiry@worldvillas.in</a></p>
+
+                    <p><a href="tel:+91 08069250076">+91 08069250076</a></p>
+                </div>
+
+                <div class="col-lg-3 col-12">
+                    <h5>Follow Us</h5>
+                    <a href="https://www.facebook.com/profile.php?id=100091756993900" class="social">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/arihant_worldvillas/" class="social">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://in.linkedin.com/company/world-villas" class="social">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCTib8RfI7GCXLZfcQQW5Rfw" class="social">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="text-center">© 2026 World Villas. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <!--========================== FLOATING BUTTONS ===========================-->
+    <!-- <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a> -->
+
+    <button id="backToTop" class="back-top" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <div class="modal fade" id="leadModal" tabindex="-1" aria-labelledby="leadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content border-0 rounded-4">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="leadModalLabel">
+                    Luxury villas starting at ₹ 6 CR
+                    </h5>
+                    <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    ></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="c3c0d2a0-c0af-4bfa-a6a4-839fd5c06c05">
+                        <input type="hidden" name="redirect" value="/thankyou.html">
+
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <input
+                                type="text"
+                                name="Name"
+                                class="form-control"
+                                placeholder="Full Name"
+                                required
+                                minlength="3"
+                                maxlength="50"
+                                pattern="[A-Za-z\s]+"
+                                title="Please enter a valid name (letters and spaces only).">
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <input
+                                type="email"
+                                name="Email"
+                                class="form-control"
+                                placeholder="Email"
+                                required>
+                        </div>
+
+                        <!-- Budget -->
+                        <div class="mb-3">
+                            <select class="form-select" name="Budget" required>
+                                <option value="" selected disabled>Select Budget</option>
+                                <option value="5 Cr - 6 Cr">5 Cr - 6 Cr</option>
+                                <option value="6 Cr - 7 Cr">6 Cr - 7 Cr</option>
+                                <option value="7 Cr - 8 Cr">7 Cr - 8 Cr</option>
+                                <option value="8 Cr - 9 Cr">8 Cr - 9 Cr</option>
+                                <option value="9 Cr - 10 Cr">9 Cr - 10 Cr</option>
+                                <option value="10 Cr +">10 Cr +</option>
+                            </select>
+                        </div>
+
+                        <!-- Country -->
+                        <div class="mb-3">
+                            <select class="form-select" name="Country" required>
+                                <option value="" selected disabled>Select Country</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                            </select>
+                        </div>
+
+                        <!-- City -->
+                        <div class="mb-3">
+                            <input
+                                type="text"
+                                name="City"
+                                class="form-control"
+                                placeholder="City"
+                                required>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-3">
+                            <input
+                                type="tel"
+                                name="Phone"
+                                class="form-control"
+                                placeholder="Phone Number"
+                                required
+                                pattern="[0-9]{10,15}"
+                                minlength="10"
+                                maxlength="15"
+                                title="Please enter a valid phone number (10-15 digits).">
+                        </div>
+
+                        <button class="btn btn-gold w-100" type="submit">
+                            Request A Virtual Visit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--========================== SCRIPTS ===========================-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- <script src="js/main.js"></script> -->
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        new Swiper(".gallerySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1200: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+        });
+
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+
+                behavior: "smooth",
+            });
+        });
+    </script>
+    <script>
+        (() => {
+            'use strict';
+
+            const forms = document.querySelectorAll('form');
+
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <script>
+    const lightbox = GLightbox();
+    </script>
+    <!-- <script>
+        const prices = {
+            IN: "₹9,999/sq.ft",
+            US: "$105/sq.ft",
+            AE: "AED 385/sq.ft",
+            GB: "£79/sq.ft",
+            AU: "A$150/sq.ft",
+            CA: "C$147/sq.ft"
+        };
+
+        fetch("https://ipapi.co/json/")
+            .then(response => response.json())
+            .then(data => {
+                const country = data.country_code;
+                document.getElementById("villa-price").textContent =
+                    prices[country] || prices.US;
+            })
+            .catch(() => {
+                document.getElementById("villa-price").textContent = prices.US;
+            });
+        </script> -->
+  </body>
+</html>
