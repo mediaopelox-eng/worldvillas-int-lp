@@ -228,7 +228,71 @@
                 <div class="col-lg-4">
                     <div class="hero-form shadow-lg" data-aos="fade-left">
                         <h4>Luxury villas starting at <span id="villa-price">₹ 6 CR</span> <br><small>(Land + Construction)</small></h4>
+<!-- Currency Conversion -->
+<div class="currency-converter">
 
+    <div class="currency-title">
+        Currency Conversion
+        <span>Approx. value of ₹6 CR</span>
+    </div>
+
+    <div class="currency-table" id="currencyTable">
+
+        <div class="currency-row">
+            <div>
+                <strong>🇺🇸 USD</strong>
+                <small>US Dollar</small>
+            </div>
+            <span data-currency="USD">Loading...</span>
+        </div>
+
+        <div class="currency-row">
+            <div>
+                <strong>🇦🇪 AED</strong>
+                <small>UAE Dirham</small>
+            </div>
+            <span data-currency="AED">Loading...</span>
+        </div>
+
+        <div class="currency-row">
+            <div>
+                <strong>🇬🇧 GBP</strong>
+                <small>British Pound</small>
+            </div>
+            <span data-currency="GBP">Loading...</span>
+        </div>
+
+        <div class="currency-row">
+            <div>
+                <strong>🇪🇺 EUR</strong>
+                <small>Euro</small>
+            </div>
+            <span data-currency="EUR">Loading...</span>
+        </div>
+
+        <div class="currency-row">
+            <div>
+                <strong>🇸🇬 SGD</strong>
+                <small>Singapore Dollar</small>
+            </div>
+            <span data-currency="SGD">Loading...</span>
+        </div>
+
+        <div class="currency-row">
+            <div>
+                <strong>🇦🇺 AUD</strong>
+                <small>Australian Dollar</small>
+            </div>
+            <span data-currency="AUD">Loading...</span>
+        </div>
+
+    </div>
+
+    <div class="currency-note">
+        * Approximate values based on current exchange rates.
+    </div>
+
+</div>
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="c3c0d2a0-c0af-4bfa-a6a4-839fd5c06c05">
                             <input type="hidden" name="redirect" value="/thankyou.html">
@@ -261,11 +325,8 @@
                             <div class="mb-3">
                                 <select class="form-select" name="Budget" required>
                                     <option value="" selected disabled>Select Budget</option>
-                                    <option value="5 Cr - 6 Cr">5 Cr - 6 Cr</option>
-                                    <option value="6 Cr - 7 Cr">6 Cr - 7 Cr</option>
-                                    <option value="7 Cr - 8 Cr">7 Cr - 8 Cr</option>
-                                    <option value="8 Cr - 9 Cr">8 Cr - 9 Cr</option>
-                                    <option value="9 Cr - 10 Cr">9 Cr - 10 Cr</option>
+                                    <option value="6 Cr - 8 Cr">6 Cr - 8 Cr</option>
+                                    <option value="8 Cr - 10 Cr">8 Cr - 10 Cr</option>
                                     <option value="10 Cr +">10 Cr +</option>
                                 </select>
                             </div>
@@ -1033,6 +1094,18 @@
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Is the project Real Estate Regulatory Authority approved?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes, World Villas is fully Real Estate Regulatory Authority compliant with all legal clearances and verified land titles in place. We can share the Real Estate Regulatory Authority registration number and legal documents during your site visit.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
                 What types of properties are available?
               </button>
@@ -1210,15 +1283,12 @@
 
                         <!-- Budget -->
                         <div class="mb-3">
-                            <select class="form-select" name="Budget" required>
-                                <option value="" selected disabled>Select Budget</option>
-                                <option value="5 Cr - 6 Cr">5 Cr - 6 Cr</option>
-                                <option value="6 Cr - 7 Cr">6 Cr - 7 Cr</option>
-                                <option value="7 Cr - 8 Cr">7 Cr - 8 Cr</option>
-                                <option value="8 Cr - 9 Cr">8 Cr - 9 Cr</option>
-                                <option value="9 Cr - 10 Cr">9 Cr - 10 Cr</option>
-                                <option value="10 Cr +">10 Cr +</option>
-                            </select>
+                                <select class="form-select" name="Budget" required>
+                                    <option value="" selected disabled>Select Budget</option>
+                                    <option value="6 Cr - 8 Cr">6 Cr - 8 Cr</option>
+                                    <option value="8 Cr - 10 Cr">8 Cr - 10 Cr</option>
+                                    <option value="10 Cr +">10 Cr +</option>
+                                </select>
                         </div>
 
                         <!-- Country -->
@@ -1339,6 +1409,81 @@
     <script>
     const lightbox = GLightbox();
     </script>
+
+    <script>
+const basePriceINR = 60000000; // ₹6 Crore
+
+const currencySymbols = {
+    USD: "$",
+    AED: "AED",
+    GBP: "£",
+    EUR: "€",
+    SGD: "S$",
+    AUD: "A$"
+};
+
+async function updateCurrencyRates() {
+
+    const currencyElements =
+        document.querySelectorAll("[data-currency]");
+
+    try {
+
+        /*
+         * ExchangeRate-API
+         * INR base currency
+         */
+        const response = await fetch(
+            "https://open.er-api.com/v6/latest/INR"
+        );
+
+        if (!response.ok) {
+            throw new Error("Currency API failed");
+        }
+
+        const data = await response.json();
+
+        if (data.result !== "success") {
+            throw new Error("Currency API returned an error");
+        }
+
+        currencyElements.forEach(function (element) {
+
+            const currency = element.dataset.currency;
+            const rate = data.rates[currency];
+
+            if (!rate) {
+                element.textContent = "N/A";
+                return;
+            }
+
+            const convertedValue = basePriceINR * rate;
+
+            const symbol = currencySymbols[currency] || currency;
+
+            element.textContent =
+                symbol + " " +
+                new Intl.NumberFormat("en-US", {
+                    maximumFractionDigits: 0
+                }).format(convertedValue);
+
+        });
+
+    } catch (error) {
+
+        console.error("Currency conversion error:", error);
+
+        currencyElements.forEach(function (element) {
+            element.textContent = "N/A";
+        });
+
+    }
+}
+
+// Run when page loads
+updateCurrencyRates();
+
+</script>
     <!-- <script>
         const prices = {
             IN: "₹9,999/sq.ft",
