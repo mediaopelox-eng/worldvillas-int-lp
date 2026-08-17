@@ -227,8 +227,17 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="hero-form shadow-lg" data-aos="fade-left">
-                        <h4>Luxury villas starting at <span id="villa-price">₹ 6 CR</span> <br><small>(Land + Construction)</small></h4>
-
+                        <h4>Luxury villas starting at 
+                            <span id="villa-price">₹ 6 CR 
+                                <a data-bs-toggle="modal" data-bs-target="#ccModal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                    </svg>
+                                </a>
+                            </span> <br>
+                            <small>(Land + Construction)</small></h4>
+                        
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="c3c0d2a0-c0af-4bfa-a6a4-839fd5c06c05">
                             <input type="hidden" name="redirect" value="/thankyou.html">
@@ -1219,12 +1228,12 @@
 
                         <!-- Budget -->
                         <div class="mb-3">
-                            <select class="form-select" name="Budget" required>
-                                <option value="" selected disabled>Select Budget</option>
-                                <option value="6 Cr - 8 Cr">6 Cr - 8 Cr</option>
-                                <option value="8 Cr - 10 Cr">8 Cr - 10 Cr</option>
-                                <option value="10 Cr +">10 Cr +</option>
-                            </select>
+                                <select class="form-select" name="Budget" required>
+                                    <option value="" selected disabled>Select Budget</option>
+                                    <option value="6 Cr - 8 Cr">6 Cr - 8 Cr</option>
+                                    <option value="8 Cr - 10 Cr">8 Cr - 10 Cr</option>
+                                    <option value="10 Cr +">10 Cr +</option>
+                                </select>
                         </div>
 
                         <!-- Country -->
@@ -1264,6 +1273,91 @@
                             Request A Virtual Visit
                         </button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="ccModal" tabindex="-1" aria-labelledby="ccModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content border-0 rounded-4">
+                    <!-- <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    ></button> -->
+
+                <div class="modal-body">
+                    <!-- Currency Conversion -->
+                    <div class="currency-converter">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="currency-title">
+                                    Currency Conversion
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-right">Approx. value of  ₹ 6 CR</div>
+                            </div>
+                        </div>
+
+                        <div class="currency-table" id="currencyTable">
+
+                            <div class="currency-row">
+                                <div>
+                                    <strong>🇺🇸 USD</strong>
+                                    <small>US Dollar</small>
+                                </div>
+                                <span data-currency="USD">Loading...</span>
+                            </div>
+
+                            <div class="currency-row">
+                                <div>
+                                    <strong>🇦🇪 AED</strong>
+                                    <small>UAE Dirham</small>
+                                </div>
+                                <span data-currency="AED">Loading...</span>
+                            </div>
+
+                            <div class="currency-row">
+                                <div>
+                                    <strong>🇬🇧 GBP</strong>
+                                    <small>British Pound</small>
+                                </div>
+                                <span data-currency="GBP">Loading...</span>
+                            </div>
+
+                            <div class="currency-row">
+                                <div>
+                                    <strong>🇪🇺 EUR</strong>
+                                    <small>Euro</small>
+                                </div>
+                                <span data-currency="EUR">Loading...</span>
+                            </div>
+
+                            <div class="currency-row">
+                                <div>
+                                    <strong>🇸🇬 SGD</strong>
+                                    <small>Singapore Dollar</small>
+                                </div>
+                                <span data-currency="SGD">Loading...</span>
+                            </div>
+
+                            <div class="currency-row">
+                                <div>
+                                    <strong>🇦🇺 AUD</strong>
+                                    <small>Australian Dollar</small>
+                                </div>
+                                <span data-currency="AUD">Loading...</span>
+                            </div>
+
+                        </div>
+
+                        <div class="currency-note">
+                            * Approximate values based on current exchange rates.
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -1345,6 +1439,81 @@
     <script>
     const lightbox = GLightbox();
     </script>
+
+    <script>
+const basePriceINR = 60000000; // ₹6 Crore
+
+const currencySymbols = {
+    USD: "$",
+    AED: "AED",
+    GBP: "£",
+    EUR: "€",
+    SGD: "S$",
+    AUD: "A$"
+};
+
+async function updateCurrencyRates() {
+
+    const currencyElements =
+        document.querySelectorAll("[data-currency]");
+
+    try {
+
+        /*
+         * ExchangeRate-API
+         * INR base currency
+         */
+        const response = await fetch(
+            "https://open.er-api.com/v6/latest/INR"
+        );
+
+        if (!response.ok) {
+            throw new Error("Currency API failed");
+        }
+
+        const data = await response.json();
+
+        if (data.result !== "success") {
+            throw new Error("Currency API returned an error");
+        }
+
+        currencyElements.forEach(function (element) {
+
+            const currency = element.dataset.currency;
+            const rate = data.rates[currency];
+
+            if (!rate) {
+                element.textContent = "N/A";
+                return;
+            }
+
+            const convertedValue = basePriceINR * rate;
+
+            const symbol = currencySymbols[currency] || currency;
+
+            element.textContent =
+                symbol + " " +
+                new Intl.NumberFormat("en-US", {
+                    maximumFractionDigits: 0
+                }).format(convertedValue);
+
+        });
+
+    } catch (error) {
+
+        console.error("Currency conversion error:", error);
+
+        currencyElements.forEach(function (element) {
+            element.textContent = "N/A";
+        });
+
+    }
+}
+
+// Run when page loads
+updateCurrencyRates();
+
+</script>
     <!-- <script>
         const prices = {
             IN: "₹9,999/sq.ft",
