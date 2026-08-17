@@ -299,6 +299,9 @@ HERO FORM
     color: #ffe0a1;
     font-size: 2.5rem;
 }
+.hero-form h4 span a {
+    cursor: pointer;
+}
 
 .form-control,
 .form-select {
@@ -1705,3 +1708,90 @@ RESPONSIVE
 /*==================================================
 END
 ==================================================*/
+/* Currency Conversion */
+
+.currency-converter {
+    padding: 18px;
+    border: 1px solid rgba(220, 190, 130, 0.45);
+    border-radius: 16px;
+    background: rgb(0 0 0);
+    color: #fff;
+}
+
+.currency-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #dfc794;
+}
+
+.currency-title span {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: #ddd;
+    margin-top: 3px;
+}
+
+.currency-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.currency-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.currency-row strong {
+    display: block;
+    font-size: 13px;
+    color: #fff;
+}
+
+.currency-row small {
+    display: block;
+    margin-top: 2px;
+    font-size: 10px;
+    color: #bdbdbd;
+}
+
+.currency-row > span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #dfc794;
+    text-align: right;
+}
+
+.currency-note {
+    margin-top: 10px;
+    font-size: 9px;
+    color: #aaa;
+    text-align: center;
+}
+#ccModal .modal-content {
+    background-color: transparent;
+}
+#ccModal .modal-body {
+    padding: 0;
+}
+#ccModal .text-right {
+    text-align: right;
+}
+
+@media (max-width: 480px) {
+
+    .currency-converter {
+        padding: 14px;
+    }
+
+    .currency-table {
+        grid-template-columns: 1fr;
+    }
+
+}
