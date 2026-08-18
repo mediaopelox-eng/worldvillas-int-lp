@@ -228,8 +228,8 @@
                 <div class="col-lg-4">
                     <div class="hero-form shadow-lg" data-aos="fade-left">
                         <h4>Luxury villas starting at 
-                            <span id="villa-price">₹ 6 CR 
-                                <a data-bs-toggle="modal" data-bs-target="#ccModal">
+                            <span id="villa-price" data-bs-toggle="tooltip" data-bs-placement="left" title="Click to Check Exchange Rates">
+                                <a data-bs-toggle="modal" data-bs-target="#ccModal">₹ 6 CR 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                                         <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
@@ -1513,6 +1513,12 @@ async function updateCurrencyRates() {
 // Run when page loads
 updateCurrencyRates();
 
+</script>
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 </script>
     <!-- <script>
         const prices = {
