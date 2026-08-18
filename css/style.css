@@ -1783,6 +1783,12 @@ END
 #ccModal .text-right {
     text-align: right;
 }
+.currency-row strong .flag {
+    font-family: "Noto Color Emoji", sans-serif;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
 
 @media (max-width: 480px) {
 
