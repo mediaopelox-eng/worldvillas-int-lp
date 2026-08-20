@@ -1790,6 +1790,250 @@ END
     margin-right: 4px;
 }
 
+/* ================================
+   COUNTRY CODE SELECT
+================================ */
+
+.country-select-wrapper {
+    position: relative;
+    width: 125px;
+    flex-shrink: 0;
+}
+
+.country-select-btn {
+    width: 100%;
+    height: 55px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ced4da;
+    border-radius: 12px 0 0 12px;
+
+    padding: 0 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    color: #212529;
+
+    outline: none;
+}
+
+.country-select-btn:hover {
+    background: #f8f9fa;
+}
+
+.country-select-btn:focus {
+}
+
+.country-select-btn .arrow {
+    font-size: 11px;
+    margin-left: 5px;
+}
+
+.country-list {
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+/* ================================
+   COUNTRY DROPDOWN
+================================ */
+
+.country-dropdown {
+    display: none;
+
+    position: fixed !important;
+
+    width: 300px;
+    max-width: calc(100vw - 20px);
+
+    background: #ffffff;
+
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+    z-index: 2147483647 !important;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+.country-dropdown.show {
+    display: block;
+}
+
+
+/* ================================
+   SEARCH BOX
+================================ */
+
+.country-search {
+    padding: 10px;
+
+    background: #fff;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.country-search input {
+    width: 100%;
+
+    height: 40px;
+
+    padding: 8px 10px;
+
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+}
+
+.country-search input:focus {
+    border-color: #86b7fe;
+
+    box-shadow:
+        0 0 0 0.15rem rgba(13, 110, 253, 0.15);
+}
+
+
+/* ================================
+   COUNTRY LIST
+================================ */
+
+#countryList {
+    max-height: 300px;
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+}
+
+
+/* Scrollbar */
+
+#countryList::-webkit-scrollbar {
+    width: 6px;
+}
+
+#countryList::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#countryList::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+    border-radius: 10px;
+}
+
+
+/* ================================
+   COUNTRY OPTION
+================================ */
+
+.country-option {
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 8px 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    color: #212529;
+
+    background: #fff;
+
+    box-sizing: border-box;
+}
+
+.country-option:hover {
+    background: #f3f6f9;
+}
+
+.country-option:active {
+    background: #e9ecef;
+}
+
+.country-flag {
+    width: 24px;
+
+    flex-shrink: 0;
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+.country-name {
+    flex: 1;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.country-option small {
+    margin-left: auto;
+
+    color: #000;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+/* ================================
+   NO COUNTRY FOUND
+================================ */
+
+#noCountryFound {
+    display: none;
+
+    padding: 15px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 576px) {
+
+    .country-select-wrapper {
+        width: 125px;
+    }
+
+    .country-dropdown {
+        width: 300px;
+        max-width: calc(100vw - 20px);
+    }
+
+}
 @media (max-width: 480px) {
 
     .currency-converter {
