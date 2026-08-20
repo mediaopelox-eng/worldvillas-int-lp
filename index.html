@@ -365,16 +365,42 @@
 
                             <!-- Phone -->
                             <div class="mb-3">
-                                <input
-                                    type="tel"
-                                    name="Phone"
-                                    class="form-control"
-                                    placeholder="Phone Number"
-                                    required
-                                    pattern="[0-9]{10,15}"
-                                    minlength="10"
-                                    maxlength="15"
-                                    title="Please enter a valid phone number (10-15 digits).">
+                                <div class="input-group">
+                                    <div class="country-select-wrapper">
+                                        <button type="button" class="country-select-btn">
+                                            <span class="selected-country">Select</span>
+                                            <span class="arrow">▼</span>
+                                        </button>
+                                        <div class="country-dropdown">
+                                            <div class="country-search">
+                                                <input
+                                                    type="text"
+                                                    class="country-search-input"
+                                                    placeholder="Search country or code..."
+                                                    autocomplete="off">
+                                            </div>
+                                            <div class="country-list"></div>
+                                            <div class="no-country-found" style="display:none;">
+                                                No country found
+                                            </div>
+                                        </div>
+                                        <input
+                                            type="hidden"
+                                            name="CountryCode"
+                                            class="country-code"
+                                            value="" required>
+                                    </div>
+                                    <input
+                                        type="tel"
+                                        name="Phone"
+                                        class="form-control"
+                                        placeholder="Phone Number"
+                                        required
+                                        pattern="[0-9]{10,15}"
+                                        minlength="10"
+                                        maxlength="15"
+                                        title="Please enter a valid phone number (10-15 digits).">
+                                </div>
                             </div>
 
                             <button class="btn btn-gold w-100" type="submit">
@@ -1325,16 +1351,42 @@
 
                         <!-- Phone -->
                         <div class="mb-3">
-                            <input
-                                type="tel"
-                                name="Phone"
-                                class="form-control"
-                                placeholder="Phone Number"
-                                required
-                                pattern="[0-9]{10,15}"
-                                minlength="10"
-                                maxlength="15"
-                                title="Please enter a valid phone number (10-15 digits).">
+                            <div class="input-group">
+                                <div class="country-select-wrapper">
+                                    <button type="button" class="country-select-btn">
+                                        <span class="selected-country">Select</span>
+                                        <span class="arrow">▼</span>
+                                    </button>
+                                    <div class="country-dropdown">
+                                        <div class="country-search">
+                                            <input
+                                                type="text"
+                                                class="country-search-input"
+                                                placeholder="Search country or code..."
+                                                autocomplete="off">
+                                        </div>
+                                        <div class="country-list"></div>
+                                        <div class="no-country-found" style="display:none;">
+                                            No country found
+                                        </div>
+                                    </div>
+                                    <input
+                                        type="hidden"
+                                        name="CountryCode"
+                                        class="country-code"
+                                        value="" required>
+                                </div>
+                                <input
+                                    type="tel"
+                                    name="Phone"
+                                    class="form-control"
+                                    placeholder="Phone Number"
+                                    required
+                                    pattern="[0-9]{10,15}"
+                                    minlength="10"
+                                    maxlength="15"
+                                    title="Please enter a valid phone number (10-15 digits).">
+                            </div>
                         </div>
 
                         <button class="btn btn-gold w-100" type="submit">
@@ -1491,15 +1543,64 @@
             const forms = document.querySelectorAll('form');
 
             Array.from(forms).forEach(form => {
+
                 form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
+
+                    // Country Code check
+                    const countryCode = form.querySelector('.country-code');
+                    const countryButton = form.querySelector('.country-select-btn');
+
+                    if (countryCode && !countryCode.value.trim()) {
+
                         event.preventDefault();
                         event.stopPropagation();
+
+                        // Error message
+                        countryButton.classList.add('is-invalid');
+
+                        // Dropdown open करा
+                        countryButton.click();
+
+                        return false;
+                    }
+
+                    // Country Code valid असल्यास
+                    if (countryCode) {
+                        countryCode.setCustomValidity('');
+                        countryButton?.classList.remove('is-invalid');
+                    }
+
+                    // बाकी form validation
+                    if (!form.checkValidity()) {
+
+                        event.preventDefault();
+                        event.stopPropagation();
+
                     }
 
                     form.classList.add('was-validated');
+
                 }, false);
+
+
+                // Country select झाल्यावर error remove
+                const countryCode = form.querySelector('.country-code');
+                const countryButton = form.querySelector('.country-select-btn');
+
+                if (countryCode) {
+
+                    countryCode.addEventListener('change', () => {
+
+                        if (countryCode.value.trim()) {
+                            countryButton?.classList.remove('is-invalid');
+                        }
+
+                    });
+
+                }
+
             });
+
         })();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
@@ -1587,6 +1688,515 @@ updateCurrencyRates();
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================
+       COUNTRY DATA
+    ========================================= */
+
+    const countries = [
+        { name: "India", code: "+91", flag: "🇮🇳", popular: true },
+        { name: "United States", code: "+1", flag: "🇺🇸", popular: true },
+        { name: "United Kingdom", code: "+44", flag: "🇬🇧", popular: true },
+        { name: "United Arab Emirates", code: "+971", flag: "🇦🇪", popular: true },
+        { name: "Canada", code: "+1", flag: "🇨🇦", popular: true },
+        { name: "Australia", code: "+61", flag: "🇦🇺", popular: true },
+        { name: "Singapore", code: "+65", flag: "🇸🇬", popular: true },
+        { name: "Saudi Arabia", code: "+966", flag: "🇸🇦", popular: true },
+        { name: "Qatar", code: "+974", flag: "🇶🇦", popular: true },
+        { name: "Pakistan", code: "+92", flag: "🇵🇰", popular: true },
+        { name: "Bangladesh", code: "+880", flag: "🇧🇩", popular: true },
+        { name: "Sri Lanka", code: "+94", flag: "🇱🇰", popular: true },
+        { name: "Japan", code: "+81", flag: "🇯🇵", popular: true },
+        { name: "China", code: "+86", flag: "🇨🇳", popular: true },
+        { name: "South Korea", code: "+82", flag: "🇰🇷", popular: true },
+        { name: "Germany", code: "+49", flag: "🇩🇪", popular: true },
+        { name: "France", code: "+33", flag: "🇫🇷", popular: true },
+        { name: "Italy", code: "+39", flag: "🇮🇹", popular: true },
+        { name: "Russia", code: "+7", flag: "🇷🇺", popular: true },
+
+        { name: "Afghanistan", code: "+93", flag: "🇦🇫" },
+        { name: "Albania", code: "+355", flag: "🇦🇱" },
+        { name: "Algeria", code: "+213", flag: "🇩🇿" },
+        { name: "Andorra", code: "+376", flag: "🇦🇩" },
+        { name: "Angola", code: "+244", flag: "🇦🇴" },
+        { name: "Argentina", code: "+54", flag: "🇦🇷" },
+        { name: "Armenia", code: "+374", flag: "🇦🇲" },
+        { name: "Austria", code: "+43", flag: "🇦🇹" },
+        { name: "Azerbaijan", code: "+994", flag: "🇦🇿" },
+        { name: "Bahamas", code: "+1242", flag: "🇧🇸" },
+        { name: "Bahrain", code: "+973", flag: "🇧🇭" },
+        { name: "Belarus", code: "+375", flag: "🇧🇾" },
+        { name: "Belgium", code: "+32", flag: "🇧🇪" },
+        { name: "Bhutan", code: "+975", flag: "🇧🇹" },
+        { name: "Bolivia", code: "+591", flag: "🇧🇴" },
+        { name: "Brazil", code: "+55", flag: "🇧🇷" },
+        { name: "Brunei", code: "+673", flag: "🇧🇳" },
+        { name: "Bulgaria", code: "+359", flag: "🇧🇬" },
+        { name: "Cambodia", code: "+855", flag: "🇰🇭" },
+        { name: "Cameroon", code: "+237", flag: "🇨🇲" },
+        { name: "Chile", code: "+56", flag: "🇨🇱" },
+        { name: "Colombia", code: "+57", flag: "🇨🇴" },
+        { name: "Costa Rica", code: "+506", flag: "🇨🇷" },
+        { name: "Croatia", code: "+385", flag: "🇭🇷" },
+        { name: "Cyprus", code: "+357", flag: "🇨🇾" },
+        { name: "Czech Republic", code: "+420", flag: "🇨🇿" },
+        { name: "Denmark", code: "+45", flag: "🇩🇰" },
+        { name: "Ecuador", code: "+593", flag: "🇪🇨" },
+        { name: "Egypt", code: "+20", flag: "🇪🇬" },
+        { name: "Estonia", code: "+372", flag: "🇪🇪" },
+        { name: "Ethiopia", code: "+251", flag: "🇪🇹" },
+        { name: "Finland", code: "+358", flag: "🇫🇮" },
+        { name: "Greece", code: "+30", flag: "🇬🇷" },
+        { name: "Hong Kong", code: "+852", flag: "🇭🇰" },
+        { name: "Hungary", code: "+36", flag: "🇭🇺" },
+        { name: "Indonesia", code: "+62", flag: "🇮🇩" },
+        { name: "Iran", code: "+98", flag: "🇮🇷" },
+        { name: "Iraq", code: "+964", flag: "🇮🇶" },
+        { name: "Ireland", code: "+353", flag: "🇮🇪" },
+        { name: "Israel", code: "+972", flag: "🇮🇱" },
+        { name: "Jamaica", code: "+1876", flag: "🇯🇲" },
+        { name: "Jordan", code: "+962", flag: "🇯🇴" },
+        { name: "Kazakhstan", code: "+7", flag: "🇰🇿" },
+        { name: "Kenya", code: "+254", flag: "🇰🇪" },
+        { name: "Kuwait", code: "+965", flag: "🇰🇼" },
+        { name: "Lebanon", code: "+961", flag: "🇱🇧" },
+        { name: "Malaysia", code: "+60", flag: "🇲🇾" },
+        { name: "Maldives", code: "+960", flag: "🇲🇻" },
+        { name: "Mexico", code: "+52", flag: "🇲🇽" },
+        { name: "Monaco", code: "+377", flag: "🇲🇨" },
+        { name: "Mongolia", code: "+976", flag: "🇲🇳" },
+        { name: "Morocco", code: "+212", flag: "🇲🇦" },
+        { name: "Myanmar", code: "+95", flag: "🇲🇲" },
+        { name: "Nepal", code: "+977", flag: "🇳🇵" },
+        { name: "Netherlands", code: "+31", flag: "🇳🇱" },
+        { name: "New Zealand", code: "+64", flag: "🇳🇿" },
+        { name: "Nigeria", code: "+234", flag: "🇳🇬" },
+        { name: "Norway", code: "+47", flag: "🇳🇴" },
+        { name: "Oman", code: "+968", flag: "🇴🇲" },
+        { name: "Peru", code: "+51", flag: "🇵🇪" },
+        { name: "Philippines", code: "+63", flag: "🇵🇭" },
+        { name: "Poland", code: "+48", flag: "🇵🇱" },
+        { name: "Portugal", code: "+351", flag: "🇵🇹" },
+        { name: "Romania", code: "+40", flag: "🇷🇴" },
+        { name: "South Africa", code: "+27", flag: "🇿🇦" },
+        { name: "Spain", code: "+34", flag: "🇪🇸" },
+        { name: "Sweden", code: "+46", flag: "🇸🇪" },
+        { name: "Switzerland", code: "+41", flag: "🇨🇭" },
+        { name: "Taiwan", code: "+886", flag: "🇹🇼" },
+        { name: "Thailand", code: "+66", flag: "🇹🇭" },
+        { name: "Turkey", code: "+90", flag: "🇹🇷" },
+        { name: "Ukraine", code: "+380", flag: "🇺🇦" },
+        { name: "Uruguay", code: "+598", flag: "🇺🇾" },
+        { name: "Uzbekistan", code: "+998", flag: "🇺🇿" },
+        { name: "Venezuela", code: "+58", flag: "🇻🇪" },
+        { name: "Vietnam", code: "+84", flag: "🇻🇳" },
+        { name: "Zambia", code: "+260", flag: "🇿🇲" },
+        { name: "Zimbabwe", code: "+263", flag: "🇿🇼" }
+    ];
+
+
+    /* =========================================
+       INITIALIZE ALL FORMS
+    ========================================= */
+
+    document.querySelectorAll(".country-select-wrapper").forEach(function (wrapper) {
+
+        const button =
+            wrapper.querySelector(".country-select-btn");
+
+        const dropdown =
+            wrapper.querySelector(".country-dropdown");
+
+        const search =
+            wrapper.querySelector(".country-search-input");
+
+        const list =
+            wrapper.querySelector(".country-list");
+
+        const noResult =
+            wrapper.querySelector(".no-country-found");
+
+        const codeInput =
+            wrapper.querySelector(".country-code");
+
+        const selected =
+            wrapper.querySelector(".selected-country");
+
+
+        if (
+            !button ||
+            !dropdown ||
+            !search ||
+            !list ||
+            !noResult ||
+            !codeInput ||
+            !selected
+        ) {
+            return;
+        }
+
+
+        /* =====================================
+           MOVE DROPDOWN TO BODY
+
+           This prevents AOS / parent overflow
+           from affecting the dropdown.
+        ===================================== */
+
+        document.body.appendChild(dropdown);
+
+
+        /* =====================================
+           RENDER COUNTRY LIST
+        ===================================== */
+
+        function renderCountries(searchValue = "") {
+
+            list.innerHTML = "";
+
+            const value =
+                searchValue.toLowerCase().trim();
+
+
+            const filtered =
+                countries.filter(function (country) {
+
+                    return (
+                        country.name
+                            .toLowerCase()
+                            .includes(value) ||
+
+                        country.code
+                            .toLowerCase()
+                            .includes(value) ||
+
+                        country.code
+                            .replace("+", "")
+                            .includes(value)
+                    );
+
+                });
+
+
+            if (filtered.length === 0) {
+
+                noResult.style.display = "block";
+
+                return;
+
+            }
+
+
+            noResult.style.display = "none";
+
+
+            filtered.forEach(function (country) {
+
+                const option =
+                    document.createElement("div");
+
+
+                option.className =
+                    "country-option";
+
+
+                option.innerHTML = `
+                    <span class="country-flag">
+                        ${country.flag}
+                    </span>
+
+                    <span class="country-name">
+                        ${country.name}
+                    </span>
+
+                    <small>
+                        ${country.code}
+                    </small>
+                `;
+
+
+                option.addEventListener(
+                    "click",
+                    function (e) {
+
+                        e.preventDefault();
+                        e.stopPropagation();
+
+
+                        /* Update ONLY current form */
+
+                        codeInput.value =
+                            country.code;
+
+
+                        selected.textContent =
+                            `${country.flag} ${country.code}`;
+
+
+                        closeDropdown();
+
+                    }
+                );
+
+
+                list.appendChild(option);
+
+            });
+
+        }
+
+
+        /* =====================================
+           POSITION DROPDOWN
+        ===================================== */
+
+        function positionDropdown() {
+
+            const rect =
+                button.getBoundingClientRect();
+
+
+            const dropdownWidth =
+                Math.min(
+                    300,
+                    window.innerWidth - 20
+                );
+
+
+            let left =
+                rect.left;
+
+
+            /* Prevent going outside right */
+
+            if (
+                left + dropdownWidth >
+                window.innerWidth - 10
+            ) {
+
+                left =
+                    window.innerWidth -
+                    dropdownWidth -
+                    10;
+
+            }
+
+
+            /* Prevent going outside left */
+
+            if (left < 10) {
+                left = 10;
+            }
+
+
+            dropdown.style.position = "fixed";
+
+            dropdown.style.width =
+                `${dropdownWidth}px`;
+
+            dropdown.style.left =
+                `${left}px`;
+
+            dropdown.style.top =
+                `${rect.bottom + 5}px`;
+
+        }
+
+
+        /* =====================================
+           OPEN
+        ===================================== */
+
+        function openDropdown() {
+
+            /* Close other dropdowns */
+
+            document
+                .querySelectorAll(".country-dropdown.show")
+                .forEach(function (other) {
+
+                    if (other !== dropdown) {
+                        other.classList.remove("show");
+                    }
+
+                });
+
+
+            positionDropdown();
+
+
+            dropdown.classList.add("show");
+
+
+            search.value = "";
+
+
+            renderCountries();
+
+        }
+
+
+        /* =====================================
+           CLOSE
+        ===================================== */
+
+        function closeDropdown() {
+
+            dropdown.classList.remove("show");
+
+        }
+
+
+        /* =====================================
+           BUTTON CLICK
+        ===================================== */
+
+        button.addEventListener(
+            "click",
+            function (e) {
+
+                e.preventDefault();
+                e.stopPropagation();
+
+
+                if (
+                    dropdown.classList.contains("show")
+                ) {
+
+                    closeDropdown();
+
+                } else {
+
+                    openDropdown();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================
+           SEARCH
+        ===================================== */
+
+        search.addEventListener(
+            "input",
+            function () {
+
+                renderCountries(
+                    this.value
+                );
+
+            }
+        );
+
+
+        /* =====================================
+           DROPDOWN CLICK
+        ===================================== */
+
+        dropdown.addEventListener(
+            "click",
+            function (e) {
+
+                e.stopPropagation();
+
+            }
+        );
+
+
+        /* =====================================
+           OUTSIDE CLICK
+        ===================================== */
+
+        document.addEventListener(
+            "click",
+            function (e) {
+
+                if (
+                    !dropdown.contains(e.target) &&
+                    !button.contains(e.target)
+                ) {
+
+                    closeDropdown();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================
+           SCROLL
+        ===================================== */
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (
+                    dropdown.classList.contains("show")
+                ) {
+
+                    positionDropdown();
+
+                }
+
+            },
+            true
+        );
+
+
+        /* =====================================
+           RESIZE
+        ===================================== */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (
+                    dropdown.classList.contains("show")
+                ) {
+
+                    positionDropdown();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================
+           ESCAPE KEY
+        ===================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (e) {
+
+                if (e.key === "Escape") {
+
+                    closeDropdown();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================
+           INITIAL RENDER
+        ===================================== */
+
+        renderCountries();
+
+    });
+
+});
 </script>
     <!-- <script>
         const prices = {
