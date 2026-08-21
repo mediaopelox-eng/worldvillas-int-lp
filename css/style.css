@@ -1825,9 +1825,6 @@ END
     background: #f8f9fa;
 }
 
-.country-select-btn:focus {
-}
-
 .country-select-btn .arrow {
     font-size: 11px;
     margin-left: 5px;
