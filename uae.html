@@ -260,6 +260,14 @@
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="c3c0d2a0-c0af-4bfa-a6a4-839fd5c06c05">
                             <input type="hidden" name="redirect" value="https://global.worldvillas.co.in/thankyou-uae">
+
+                            <input type="hidden" name="utm_source">
+                            <input type="hidden" name="utm_medium">
+                            <input type="hidden" name="utm_campaign">
+                            <input type="hidden" name="utm_content">
+                            <input type="hidden" name="utm_term">
+                            <input type="hidden" name="gclid">
+                            <input type="hidden" name="market">
                             <!-- This Web3Forms Access Key is configured to send leads to: opeloxm@gmail.com -->
                             <!-- Full Name -->
                             <div class="mb-3">
@@ -1245,7 +1253,15 @@
                 <div class="modal-body">
                     <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="c3c0d2a0-c0af-4bfa-a6a4-839fd5c06c05">
-                            <input type="hidden" name="redirect" value="https://global.worldvillas.co.in/thankyou-uae">
+                        <input type="hidden" name="redirect" value="https://global.worldvillas.co.in/thankyou-uae">
+
+                        <input type="hidden" name="utm_source">
+                        <input type="hidden" name="utm_medium">
+                        <input type="hidden" name="utm_campaign">
+                        <input type="hidden" name="utm_content">
+                        <input type="hidden" name="utm_term">
+                        <input type="hidden" name="gclid">
+                        <input type="hidden" name="market">
 
                         <!-- Full Name -->
                         <div class="mb-3">
@@ -2148,6 +2164,36 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     });
 
 });
+</script>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+
+const params = [
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'utm_content',
+  'utm_term',
+  'gclid'
+];
+
+params.forEach(param => {
+  const field = document.getElementById(param);
+  if (field && urlParams.get(param)) {
+    field.value = urlParams.get(param);
+  }
+});
+
+// Detect UK or UAE page
+const marketField = document.getElementById('market');
+
+if (marketField) {
+  if (window.location.pathname.toLowerCase().startsWith('/uae')) {
+    marketField.value = 'UAE';
+  } else {
+    marketField.value = 'UK';
+  }
+}
 </script>
     <!-- <script>
         const prices = {
