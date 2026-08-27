@@ -2243,35 +2243,82 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 });
 </script>
+<!-- <script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const params = [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_content',
+    'utm_term',
+    'gclid'
+    ];
+
+    params.forEach(param => {
+    const field = document.getElementById(param);
+    if (field && urlParams.get(param)) {
+        field.value = urlParams.get(param);
+    }
+    });
+
+    // Detect UK or UAE page
+    const marketField = document.getElementById('market');
+
+    if (marketField) {
+    if (window.location.pathname.toLowerCase().startsWith('/uae')) {
+        marketField.value = 'UAE';
+    } else {
+        marketField.value = 'UK';
+    }
+    }
+</script> -->
 <script>
-const urlParams = new URLSearchParams(window.location.search);
-
-const params = [
-  'utm_source',
-  'utm_medium',
-  'utm_campaign',
-  'utm_content',
-  'utm_term',
-  'gclid'
-];
-
-params.forEach(param => {
-  const field = document.getElementById(param);
-  if (field && urlParams.get(param)) {
-    field.value = urlParams.get(param);
-  }
-});
-
-// Detect UK or UAE page
-const marketField = document.getElementById('market');
-
-if (marketField) {
-  if (window.location.pathname.toLowerCase().startsWith('/uae')) {
-    marketField.value = 'UAE';
-  } else {
-    marketField.value = 'UK';
-  }
-}
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const params = [
+            "utm_source",
+            "utm_medium",
+            "utm_campaign",
+            "utm_content",
+            "utm_term",
+            "gclid"
+        ];
+        // =========================================
+        // FILL UTM PARAMETERS IN ALL FORMS
+        // =========================================
+        document.querySelectorAll("form").forEach(function (form) {
+            params.forEach(function (param) {
+                const value = urlParams.get(param);
+                if (value) {
+                    const field = form.querySelector(
+                        'input[name="' + param + '"]'
+                    );
+                    if (field) {
+                        field.value = value;
+                    }
+                }
+            });
+            // =========================================
+            // MARKET
+            // =========================================
+            const marketField = form.querySelector(
+                'input[name="market"]'
+            );
+            if (marketField) {
+                if (
+                    window.location.pathname
+                        .toLowerCase()
+                        .startsWith("/uae")
+                ) {
+                    marketField.value = "UAE";
+                } else {
+                    marketField.value = "UK";
+                }
+            }
+        });
+    });
 </script>
     <!-- <script>
         const prices = {
