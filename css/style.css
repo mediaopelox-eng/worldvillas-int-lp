@@ -2029,6 +2029,9 @@ END
         width: 300px;
         max-width: calc(100vw - 20px);
     }
+    .carousel-caption p {
+        display: none;
+    }
 
 }
 @media (max-width: 480px) {
